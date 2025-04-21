@@ -18,8 +18,8 @@ func BaseToDec(value string, base int) int {
 	const charset = "0123456789ABCDEF"
 	for i := len(value) - 1; i >= 0; i-- {
 		v := value[i]
-		b := strings.Index(charset, string(v))
-		res += float64(b) * math.Pow(float64(base), float64(pow))
+		char := strings.Index(charset, string(v))
+		res += float64(char) * math.Pow(float64(base), float64(pow))
 		pow++
 	}
 	return int(res)
